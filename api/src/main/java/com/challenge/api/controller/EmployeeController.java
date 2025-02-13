@@ -1,26 +1,34 @@
-package com.challenge.api.controller;
+package src.main.java.com.challenge.api.controller;
 
 import com.challenge.api.model.Employee;
 import java.util.List;
 import java.util.UUID;
+import java.util.ArrayList;
+import com.challenge.api.service.EmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
+import src.main.java.com.challenge.api.service.EmployeeService;
 
 /**
  * Fill in the missing aspects of this Spring Web REST Controller. Don't forget to add a Service layer.
  */
 @RestController
 @RequestMapping("/api/v1/employee")
-public class EmployeeController {
 
+public class EmployeeController {
     /**
      * @implNote Need not be concerned with an actual persistence layer. Generate mock Employee models as necessary.
      * @return One or more Employees.
      */
+
+    private final EmployeeService employees;
+
+    @GetMapping
     public List<Employee> getAllEmployees() {
         throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED);
+        return employees.getEmployees();
     }
 
     /**

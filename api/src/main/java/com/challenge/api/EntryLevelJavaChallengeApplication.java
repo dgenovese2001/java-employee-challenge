@@ -8,5 +8,6 @@ public class EntryLevelJavaChallengeApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(EntryLevelJavaChallengeApplication.class, args);
+
     }
 }
