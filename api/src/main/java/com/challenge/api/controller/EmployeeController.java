@@ -1,14 +1,12 @@
 package com.challenge.api.controller;
 
 import com.challenge.api.model.Employee;
+import src.main.java.com.challenge.api.model.EmployeeImpl;
 import com.challenge.api.service.EmployeeService;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 /**
@@ -46,7 +44,7 @@ public class EmployeeController {
     /*Grabbing employee by UUID if they don't exist, and it returns null then it will
     throw an exception*/
     @GetMapping(value = "/{uuid}")
-    public Employee getEmployeeByUuid(UUID uuid) {
+    public Employee getEmployeeByUuid(@PathVariable UUID uuid) {
         if (uuid == null) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "UUID parameter cannot be null");
         }
@@ -67,12 +65,12 @@ public class EmployeeController {
      */
     // Returning a new employee based off the object that is given
     @PostMapping
-    public Employee createEmployee(Object requestBody) {
+    public EmployeeImpl createEmployee(@RequestBody EmployeeImpl requestBody) {
         // If the requestBody is null it will throw an exception
         if (requestBody == null) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Request body cannot be null");
         }
 
-        return employeesService.createNewEmployee((Employee) requestBody);
+        return (EmployeeImpl) employeesService.createNewEmployee(requestBody);
     }
 }
