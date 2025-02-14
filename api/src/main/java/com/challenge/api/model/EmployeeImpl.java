@@ -1,11 +1,10 @@
 package src.main.java.com.challenge.api.model;
 
 import com.challenge.api.model.Employee;
-
 import java.time.Instant;
 import java.util.UUID;
 
-
+// Implementing the getters and setters from the employee instance
 public class EmployeeImpl implements Employee {
 
     private UUID uuid;
@@ -28,7 +27,8 @@ public class EmployeeImpl implements Employee {
 
     private Instant contractTerminationDate;
 
-    public EmployeeImpl (UUID uuid, String firstName, String lastName, Integer salary, Integer age, String jobTitle, String email){
+    public EmployeeImpl(
+            UUID uuid, String firstName, String lastName, Integer salary, Integer age, String jobTitle, String email) {
 
         this.uuid = uuid;
 
@@ -49,7 +49,6 @@ public class EmployeeImpl implements Employee {
         this.contractHireDate = Instant.now();
 
         this.contractTerminationDate = null;
-
     }
 
     @Override
@@ -66,9 +65,7 @@ public class EmployeeImpl implements Employee {
     }
 
     @Override
-    public void setFirstName(String name) {
-
-    }
+    public void setFirstName(String name) {}
 
     @Override
     public String getLastName() {
@@ -76,9 +73,7 @@ public class EmployeeImpl implements Employee {
     }
 
     @Override
-    public void setLastName(String name) {
-
-    }
+    public void setLastName(String name) {}
 
     @Override
     public String getFullName() {
@@ -86,9 +81,7 @@ public class EmployeeImpl implements Employee {
     }
 
     @Override
-    public void setFullName(String name) {
-
-    }
+    public void setFullName(String name) {}
 
     @Override
     public Integer getSalary() {
@@ -96,9 +89,7 @@ public class EmployeeImpl implements Employee {
     }
 
     @Override
-    public void setSalary(Integer salary) {
-
-    }
+    public void setSalary(Integer salary) {}
 
     @Override
     public Integer getAge() {
@@ -106,9 +97,7 @@ public class EmployeeImpl implements Employee {
     }
 
     @Override
-    public void setAge(Integer age) {
-
-    }
+    public void setAge(Integer age) {}
 
     @Override
     public String getJobTitle() {
@@ -116,9 +105,7 @@ public class EmployeeImpl implements Employee {
     }
 
     @Override
-    public void setJobTitle(String jobTitle) {
-
-    }
+    public void setJobTitle(String jobTitle) {}
 
     @Override
     public String getEmail() {
@@ -126,9 +113,7 @@ public class EmployeeImpl implements Employee {
     }
 
     @Override
-    public void setEmail(String email) {
-
-    }
+    public void setEmail(String email) {}
 
     @Override
     public Instant getContractHireDate() {
@@ -136,9 +121,7 @@ public class EmployeeImpl implements Employee {
     }
 
     @Override
-    public void setContractHireDate(Instant date) {
-
-    }
+    public void setContractHireDate(Instant date) {}
 
     @Override
     public Instant getContractTerminationDate() {
@@ -146,7 +129,5 @@ public class EmployeeImpl implements Employee {
     }
 
     @Override
-    public void setContractTerminationDate(Instant date) {
-
-    }
+    public void setContractTerminationDate(Instant date) {}
 }
